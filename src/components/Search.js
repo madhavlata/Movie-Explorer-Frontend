@@ -12,7 +12,7 @@ const Search = () => {
     try {
       setMovies([]);
       const response = await axios.get(
-        `https://movie-explorer-omdb.onrender.com`,
+        `https://movie-explorer-backend-gcsm.onrender.com/search`,
         {
           params: { query },
         }

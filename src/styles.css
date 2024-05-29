@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Reddit+Mono:wght@200..900&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Reddit Mono', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #da9d9d;
 }
 
 /* Container Styles */
@@ -10,7 +12,7 @@ body {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #e8baba;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -19,6 +21,7 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    text-decoration: underline;
 }
 
 /* Search Input Styles */
@@ -34,9 +37,10 @@ input[type="text"] {
 
 /* Button Styles */
 button {
+    font: 'Reddit Mono';
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: green;
     color: white;
     border: none;
     border-radius: 5px;
@@ -44,8 +48,22 @@ button {
     font-size: 16px;
 }
 
-button:hover {
-    background-color: #0056b3;
+
+button {
+    --clr: #5559AB;
+    --outline: 2px solid white;
+    border: 2px solid var(--clr);
+    background: var(--clr);
+    color: white;
+    outline: var(--outline);
+    transition: outline-offset 200ms ease;
+}
+
+button:hover,
+button:focus {
+
+    outline: var(--outline);
+    outline-offset: -6px;
 }
 
 /* Movie List Styles */
@@ -83,19 +101,25 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* MovieList.css */
 .movie-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-/* MovieDetails.css */
 .movie-details {
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.movie-details:hover {
+    scale: 1.03;
+    opacity: 2;
+    box-shadow: 0 0 10px #5559AB;
 }
 
 .movie-details h3 {
